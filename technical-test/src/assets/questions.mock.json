@@ -1,0 +1,85 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Entertainment: Comics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In Marvel Comics, Taurus is the founder and leader of which criminal organization?",
+      "correct_answer": "Zodiac",
+      "incorrect_answers": ["Scorpio", "Tiger Mafia", "The Union"]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "The movie &quot;The Nightmare before Christmas&quot; was all done with physical objects.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the airspeed velocity of an unladen swallow?",
+      "correct_answer": "24 MPH",
+      "incorrect_answers": ["15 MPH", "20 MPH", "200 MPH"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the lead singer of the band Coldplay?",
+      "correct_answer": "Chris Martin",
+      "incorrect_answers": ["Chris Isaak", "Chris Wallace", "Chris Connelly"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the French word for &quot;hat&quot;?",
+      "correct_answer": "Chapeau",
+      "incorrect_answers": ["Bonnet", " &Eacute;charpe", " Casque"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "The starting pistol of the Terrorist team in a competitive match of Counter Strike: Global Offensive is what?",
+      "correct_answer": "Glock-18",
+      "incorrect_answers": ["Tec-9", "Desert Eagle", "Dual Berretas"]
+    },
+    {
+      "category": "Vehicles",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Arriva is owned by the Deutsche Bahn.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "&quot;Drink the Sea&quot; is an album by which electronic music artist?",
+      "correct_answer": "The Glitch Mob",
+      "incorrect_answers": ["Avicii", "XXYYXX", "Flux Pavilion"]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the 2012 animated film &quot;Wolf Children&quot;, what are the names of the wolf children?",
+      "correct_answer": "Ame &amp; Yuki",
+      "incorrect_answers": ["Hana &amp; Yuki", "Ame &amp; Hana", "Chuck &amp; Anna"]
+    },
+    {
+      "category": "Entertainment: Television",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "In Battlestar Galactica (2004), Cylons were created by man as cybernetic workers and soldiers.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    }
+  ]
+}

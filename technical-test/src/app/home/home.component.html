@@ -1,0 +1,20 @@
+<div class="h-screen bg-indigo-900 flex items-center">
+  <div class="bg-white rounded-md shadow-lg w-2/5 h-3/5 mx-auto p-14">
+    <h1 class="font-bangers text-4xl text-center">Welcome to TriviAwto!</h1>
+    <h2 class="font-bangers text-2xl text-center">
+      Enter your name to start playing
+    </h2>
+    <div class="w-64 mx-auto mt-20">
+      <nz-input-group nzSearch [nzAddOnAfter]="suffixButton">
+        <input type="text" nz-input placeholder="Pepito perez" [(ngModel)]="nombre" />
+      </nz-input-group>
+      <ng-template #suffixButton>x
+        <a routerLink="questions">
+          <button nz-button nzType="primary" nzSize="large" nzSearch class="font-bangers" [disabled]="!nombre">
+            Enter
+          </button>
+        </a>
+      </ng-template>
+    </div>
+  </div>
+</div>

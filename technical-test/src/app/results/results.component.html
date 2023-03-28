@@ -1,0 +1,25 @@
+<div class="bg-indigo-900 grid h-screen place-items-center py-4">
+  <div
+    class="bg-white rounded-md shadow-md h-full w-4/6 py-5 px-10 overflow-x-auto space-y-5"
+  >
+    <h1 class="text-black font-bangers text-5xl text-center">TriviAwto</h1>
+    <nz-table #basicTable [nzData]="scores" nzFrontPagination="false">
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.place }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.score }}</td>
+          <td>{{ data.time }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
