@@ -12,7 +12,7 @@ export class QuestionsService {
   constructor(private readonly httpService: HttpService) {}
 
   async getQuestions(data: QuestionsOptions): Promise<IResult[]> {
-    return this.getQuestionsBy(levels[data.difficulty]);
+    return this.getQuestionsBy(levels[data?.difficulty]);
   }
 
   public async getQuestionsBy(modeSelected: ILevelMode[]) {

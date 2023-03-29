@@ -1,9 +1,14 @@
-import { Type } from 'class-transformer';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsEnum, IsNotEmpty } from 'class-validator';
+
+export enum DifficultyEnum {
+  'easy' = 'easy',
+  'medium' = 'medium',
+  'hard' = 'hard',
+  'inferno' = 'inferno',
+}
 
 export class QuestionsOptions {
-  @Type(() => String)
-  @IsString()
+  @IsEnum(DifficultyEnum)
   @IsNotEmpty()
-  readonly difficulty: 'easy' | 'medium' | 'hard' | 'inferno';
+  readonly difficulty: DifficultyEnum;
 }
