@@ -18,6 +18,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { ServiceModule } from './services/services.module';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzResultModule } from 'ng-zorro-antd/result';
 import en from '@angular/common/locales/en';
 
 registerLocaleData(en);
@@ -43,6 +44,7 @@ registerLocaleData(en);
     NzSpinModule,
     NzTableModule,
     ServiceModule,
+    NzResultModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

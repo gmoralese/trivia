@@ -15,6 +15,7 @@ export class QuestionsComponent implements OnInit {
   public disableButton = false;
   public form: FormGroup;
   public score = 0;
+  public errorOnLoading = false;
 
   constructor(
     private questionsService: QuestionsService,
@@ -31,13 +32,17 @@ export class QuestionsComponent implements OnInit {
     this.finished = false;
     this.score = 0;
     this.isLoading = true;
-    this.questionsService
-      .getQuestions(this.level)
-      .subscribe((data: Questions[]) => {
+    this.questionsService.getQuestions(this.level).subscribe(
+      (data: Questions[]) => {
         this.questions = data;
         this.buildForm(this.questions);
         this.isLoading = false;
-      });
+      },
+      (error) => {
+        this.isLoading = false;
+        this.errorOnLoading = true;
+      }
+    );
   }
 
   public buildForm(questions: Questions[]): void {
