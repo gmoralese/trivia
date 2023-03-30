@@ -6,12 +6,15 @@ import { IResult } from 'src/questions/models/questionsResponse.model';
 import { levels } from './mocks/levels';
 import { ILevelMode } from './models/level.model';
 import QuestionConverter from 'src/questions/converters/questions-converter';
+import { QuestionResponseDto } from './dto/questionRS.dto';
 
 @Injectable()
 export class QuestionsService {
   constructor(private readonly httpService: HttpService) {}
 
-  public async getQuestions(data: QuestionsOptions): Promise<IResult[]> {
+  public async getQuestions(
+    data: QuestionsOptions,
+  ): Promise<QuestionResponseDto[]> {
     return this.getQuestionsBy(levels[data?.difficulty]);
   }
 

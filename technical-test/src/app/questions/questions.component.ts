@@ -59,7 +59,7 @@ export class QuestionsComponent implements OnInit {
 
   public handleFinish(): void {
     for (const [index, question] of this.questions.entries()) {
-      if (this.form.value[index] === question.correct_answer) {
+      if (this.form.value[index] === question.correctAnswer) {
         this.score = this.score + 2;
       } else {
         this.score = this.score - 2;

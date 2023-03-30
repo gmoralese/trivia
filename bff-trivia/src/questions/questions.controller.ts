@@ -1,6 +1,6 @@
 import { Controller, Get, Query, ValidationPipe } from '@nestjs/common';
 import { QuestionsOptions } from 'src/questions/models/questionsOptions.model';
-import { IResult } from 'src/questions/models/questionsResponse.model';
+import { QuestionResponseDto } from './dto/questionRS.dto';
 import { QuestionsService } from './questions.service';
 
 @Controller('questions')
@@ -15,7 +15,7 @@ export class QuestionsController {
       }),
     )
     query: QuestionsOptions,
-  ): Promise<IResult[]> {
+  ): Promise<QuestionResponseDto[]> {
     return this.questionsService.getQuestions(query);
   }
 }
