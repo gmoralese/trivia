@@ -1,24 +1,45 @@
 <div class="bg-indigo-900 grid h-screen place-items-center">
   <div class="bg-white rounded-md shadow-md h-5/6 w-4/6 py-5 px-10 overflow-x-auto">
     <h1 class="text-black font-bangers text-5xl text-center">TriviAwto</h1>
-    <div class="prose flex flex-col mt-5">
-      <div *ngFor="let question of questions; let i = index" class="font-sans">
-        <span class="font-bold">{{ i + 1 }}.</span> {{ question.question }}
-        <div class="px-5">
-          <nz-radio-group class="flex flex-col">
-            <label *ngFor="let option of question.incorrect_answers" nz-radio [nzValue]="option">{{ option }}</label>
-            <label nz-radio [nzValue]="question.correct_answer">
-              {{ question.correct_answer }}</label>
-          </nz-radio-group>
-        </div>
-      </div>
+    <h2 class="text-black font-bangers text-2xl text-center">Level</h2>
+    <div class="flex justify-center my-[20px] ">
+      <nz-select [(ngModel)]="level" (ngModelChange)="getQuestions()">
+        <nz-option nzValue="easy" nzLabel="Easy"></nz-option>
+        <nz-option nzValue="medium" nzLabel="Medium"></nz-option>
+        <nz-option nzValue="hard" nzLabel="Hard"></nz-option>
+        <nz-option nzValue="inferno" nzLabel="Inferno"></nz-option>
+      </nz-select>
     </div>
+    <div class="flex justify-center">
+      <nz-spin *ngIf="isLoading" nzSimple></nz-spin>
+    </div>
+
+    <form [formGroup]="form" *ngIf="!isLoading">
+      <div *ngFor="let question of questions; let i = index" class="mb-2">
+        <span class="font-bold mb-1">{{ i + 1 }}.</span> {{ question.question }}
+        <nz-radio-group class="flex flex-col">
+          <label *ngFor="let option of question.incorrect_answers; let x = index" nz-radio [nzValue]="x" [id]="x"
+            (click)="checkPoints(option, i)">{{ option
+            }}</label>
+        </nz-radio-group>
+      </div>
+    </form>
   </div>
-  <div class="text-center py-5">
-    <a routerLink="results">
+
+  <div class="flex flex-col text-center">
+    <span *ngIf="finished" class="font-bold text-3xl mb-1 text-white">Puntaje obtenido: {{ score }}</span>
+  </div>
+
+  <div class="flex flex-col text-center py-3">
+    <button nz-button nzType="primary" nzSize="large" (click)="!finished ? handleFinish() : getQuestions()"
+      [disabled]="!disableButton"
+      class="bg-yellow-400 hover:bg-yellow-300 active:hover:bg-yellow-300 font-bangers text-xl tracking-widest">
+      {{ !finished ? 'Finish' : ' Play again' }}
+    </button>
+    <a routerLink="results" *ngIf="finished" class="mt-2">
       <button nz-button nzType="primary" nzSize="large"
         class="bg-yellow-400 hover:bg-yellow-300 active:hover:bg-yellow-300 font-bangers text-xl tracking-widest">
-        Finish
+        Show scores
       </button>
     </a>
   </div>
