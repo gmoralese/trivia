@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../services/questions/questions.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Questions } from '../types/questions.type';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-questions-root',
@@ -38,7 +39,7 @@ export class QuestionsComponent implements OnInit {
         this.buildForm(this.questions);
         this.isLoading = false;
       },
-      (error) => {
+      (error: HttpErrorResponse) => {
         this.isLoading = false;
         this.errorOnLoading = true;
       }

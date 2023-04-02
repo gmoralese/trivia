@@ -4,7 +4,7 @@ export const levels: ILevel = {
   easy: [
     {
       difficulty: 'easy',
-      amount: 10,
+      amount: 3,
     },
   ],
   medium: [
