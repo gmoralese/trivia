@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Configuration, ConfigurationSchema } from './schemas/config.schema';
+import { Configuration, ConfigurationSchema } from './schemas/levels.schema';
 import { LevelsService } from './levels.service';
 
 @Module({

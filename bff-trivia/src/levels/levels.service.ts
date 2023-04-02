@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Configuration } from './schemas/config.schema';
+import { Configuration } from './schemas/levels.schema';
 import { Model } from 'mongoose';
 import { IConfiguration } from './models/config.model';
 
